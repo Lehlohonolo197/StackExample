@@ -1,11 +1,29 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Stack;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
+        String orWord = "Primo";
 
+        String reversed = reversedWord(orWord);
+
+        System.out.println("Original word :" + orWord);
+        System.out.println("Reversed word :" + reversed);
+
+    }
+
+    public static String reversedWord(String word) {
+
+        String reversed = "";
+        Stack<Character> stackOfChar = new Stack<>();
+
+        for (int i = 0; i < word.length(); i++) {
+            stackOfChar.push(word.charAt(i));
+        }
+
+        while (!stackOfChar.isEmpty()) {
+            reversed += stackOfChar.pop();
+        }
+        return reversed;
     }
 }
